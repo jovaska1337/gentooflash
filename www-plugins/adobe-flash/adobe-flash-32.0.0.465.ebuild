@@ -92,7 +92,7 @@ src_prepare() {
 	find "${S}" -type f -name '*.so' | while read FILE; do
 		ebegin "Defusing ${FILE:${#S}+1}"
 		# set the January 12th 2021 timestamp to infinity.
-    	sed -i.bak -e 's/\x00\x00\x40\x46\x3E\x6F\x77\x42/\x00\x00\x00\x00\x00\x00\xFF\x7F/' "${FILE}" \
+    		sed -i.bak -e 's/\x00\x00\x40\x46\x3E\x6F\x77\x42/\x00\x00\x00\x00\x00\x00\xFF\x7F/' "${FILE}" \
 			&& rm "${FILE}.bak"
 		eend $?
 	done

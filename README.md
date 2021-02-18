@@ -8,4 +8,4 @@ Just put the `www-plugins` directory into your local overlay repository and do `
 
 ## Removing the Blocker Manually
 
-If you don't use Gentoo and want to remove the EOL blocker from a plugin shared object, you can use the following `sed` command: `sed -e 's/\x00\x00\x40\x46\x3E\x6F\x77\x42/\x00\x00\x00\x00\x00\x00\xFF\x7F/ < plugin.so > unblocked.so`
+If you don't use Gentoo and want to remove the EOL blocker from a plugin shared object, you can use the following `sed` command: `sed -e 's/\x00\x00\x40\x46\x3E\x6F\x77\x42/\x00\x00\x00\x00\x00\x00\xFF\x7F/' < plugin.so > unblocked.so`
